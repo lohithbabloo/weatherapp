@@ -1,0 +1,9 @@
+.weather{
+    width: 80%;
+    margin: auto;
+}
+
+.top{
+    display: flex;
+    justify-content: space-around;
+}

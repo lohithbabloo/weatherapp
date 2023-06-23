@@ -1,16 +1,16 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-import Searchbar from "./components/searchbar";
-import Inputresults from "./components/Inputresults";
-
+import Searchbar from "./components/search/searchbar";
+import "./index.css";
+import Weather from "./components/weather/presentweather";
 function App() {
   const handlesearchchange = (searchData) => {
     console.log(searchData);
   };
   return (
-    <div className="App">
+    <div className="container">
       <Searchbar onSearchChange={handlesearchchange} />
-      {/* <Inputresults results={results} /> */}
+      <Weather />
     </div>
   );
 }
