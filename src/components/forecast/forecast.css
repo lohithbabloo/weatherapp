@@ -1,0 +1,29 @@
+.details{
+    margin-top: 40px;
+}
+
+.details h3{
+    text-align: center;
+}
+
+.nextdayforecast{
+    width: 80%;
+    /* background-color: black; */
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    /* margin-top: 40px; */
+}
+
+.nextdayforecast p{
+    margin-top: 10px;
+}
+
+.headers{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+}

@@ -5,12 +5,10 @@ const Weather = ({ data }) => {
     <div className="weather-container">
       <div className="top">
         <div className="geoDetails">
-          <p className="city">
-            {data.city},{data.country}
-          </p>
-          <p className="temperature">{data.main.temp}°C</p>
+          <p className="city">{data.city}</p>
+          <p className="temperature">{Math.round(data.main.temp)}°C</p>
           <hr />
-          <p>feels like {data.main.feels_like}°C</p>
+          <p>feels like {Math.round(data.main.feels_like)}°C</p>
         </div>
         <div className="weatherdetails">
           <img

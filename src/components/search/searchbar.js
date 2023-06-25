@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { geoLocApiKey, url } from "../../api";
+import "./seachbar.css";
 
 const Searchbar = ({ onSearchChange }) => {
   const [search, setSearch] = useState("");
@@ -25,6 +26,12 @@ const Searchbar = ({ onSearchChange }) => {
         console.error(err);
       });
   }
+  const style = {
+    control: (provided, state) => ({
+      ...provided,
+      boxShadow: state.isFocussed ? null : null,
+    }),
+  };
 
   const handleChange = (searchData) => {
     setSearch(searchData);
@@ -33,13 +40,20 @@ const Searchbar = ({ onSearchChange }) => {
 
   return (
     <div className="searchbar_wrapper">
-      <AsyncPaginate
-        placeholder="Search......"
-        debounceTimeout={600}
-        value={search}
-        onChange={handleChange}
-        loadOptions={loadOptions}
-      ></AsyncPaginate>
+      <div className="logo">
+        <img src="weather.png" alt="logo" />
+        <p>SkyView</p>
+      </div>
+      <div className="searchbar">
+        <AsyncPaginate
+          placeholder="Search......"
+          debounceTimeout={600}
+          value={search}
+          onChange={handleChange}
+          loadOptions={loadOptions}
+          styles={style}
+        ></AsyncPaginate>
+      </div>
     </div>
   );
 };
