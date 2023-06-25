@@ -1,13 +1,12 @@
 body{
-    background-color: gainsboro;
+    /* background-color: blanchedalmond; */
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
 }
 
-*{
-    border: 0;
-    padding: 0;
-}
 
 .container{
-    width: 1080px;
+    width: 80%;
     margin: 20px auto;
 }

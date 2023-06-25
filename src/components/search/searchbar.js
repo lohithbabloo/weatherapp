@@ -1,14 +1,15 @@
 import { React, useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
-import geoLocApiKey from "./search";
+import { geoLocApiKey, url } from "../../api";
 
 const Searchbar = ({ onSearchChange }) => {
   const [search, setSearch] = useState("");
 
   function loadOptions(inputValue) {
-    const url = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?minPopulation=1000000&namePrefix=${inputValue}`;
-
-    return fetch(url, geoLocApiKey)
+    return fetch(
+      `${url}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
+      geoLocApiKey
+    )
       .then((response) => response.json())
       .then((response) => {
         return {
